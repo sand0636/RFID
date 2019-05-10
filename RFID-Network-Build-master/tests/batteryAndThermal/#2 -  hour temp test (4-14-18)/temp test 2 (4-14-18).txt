@@ -1,0 +1,10 @@
+Start ambient = -- C
+Start time = 4/14/2018 15:49:08
+Start temp = 24.12 C
+
+End ambient =   C
+End time = 
+End temp =  C
+
+Notes: 
+- In wells, first floor table

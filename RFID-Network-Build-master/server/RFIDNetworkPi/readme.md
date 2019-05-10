@@ -1,0 +1,4 @@
+# RFIDNetwork Pi
+This folder contains the code that interacts with the radio, communicates with the readers and gives the server access to the new reads.  The python version of the code (main.py) is the version that is updated and worked on.  The c++ version of the code is no longer updated but will still get the reads from the network and give the server access to them.  **It is recommended that you use the python version (used by default) and make any changes to this version.**  The version of the code used is determined by editing the /ect/rc.local file which starts the code when the Raspberry Pi starts.
+
+The python version of the code is ran by saying `sudo python main.py`.  It uses the rf24Tree.py script which creates a better data type for representing the network and allows for localized radio sleeping.

@@ -1,0 +1,34 @@
+\BOOKMARK [1][-]{section.1}{Preface}{}% 1
+\BOOKMARK [1][-]{section.2}{Instillation}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{The radio}{section.2}% 3
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Setting up the radio}{subsection.2.1}% 4
+\BOOKMARK [2][-]{subsection.2.2}{Arduino \(RFID reader\)}{section.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Hardware}{subsection.2.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Software}{subsection.2.2}% 7
+\BOOKMARK [2][-]{subsection.2.3}{Server}{section.2}% 8
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Hardware}{subsection.2.3}% 9
+\BOOKMARK [3][-]{subsubsection.2.3.2}{Software}{subsection.2.3}% 10
+\BOOKMARK [1][-]{section.3}{Server \(Raspberry Pi\)}{}% 11
+\BOOKMARK [2][-]{subsection.3.1}{How to use}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.2}{Settings}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.3}{Battery management system}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.4}{Front-end \(website\)}{section.3}% 15
+\BOOKMARK [3][-]{subsubsection.3.4.1}{Style}{subsection.3.4}% 16
+\BOOKMARK [3][-]{subsubsection.3.4.2}{Scripting}{subsection.3.4}% 17
+\BOOKMARK [2][-]{subsection.3.5}{Back-end \(Node.js\)}{section.3}% 18
+\BOOKMARK [1][-]{section.4}{RFIDNetwork class \(Arduino code\)}{}% 19
+\BOOKMARK [2][-]{subsection.4.1}{Documentation}{section.4}% 20
+\BOOKMARK [2][-]{subsection.4.2}{How to add to another reader}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.3}{Understanding the mesh networking}{section.4}% 22
+\BOOKMARK [1][-]{section.5}{Protocols}{}% 23
+\BOOKMARK [2][-]{subsection.5.1}{RFIDNetworkProtocol}{section.5}% 24
+\BOOKMARK [2][-]{subsection.5.2}{Localized radio sleep}{section.5}% 25
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Purpose}{subsection.5.2}% 26
+\BOOKMARK [1][-]{section.6}{Tests}{}% 27
+\BOOKMARK [2][-]{subsection.6.1}{Range}{section.6}% 28
+\BOOKMARK [2][-]{subsection.6.2}{Power}{section.6}% 29
+\BOOKMARK [2][-]{subsection.6.3}{Reliability}{section.6}% 30
+\BOOKMARK [1][-]{section.7}{Appendix}{}% 31
+\BOOKMARK [2][-]{subsection.7.1}{Purchase list}{section.7}% 32
+\BOOKMARK [2][-]{subsection.7.2}{Code documentation/walk through}{section.7}% 33
+\BOOKMARK [2][-]{subsection.7.3}{Dependencies}{section.7}% 34

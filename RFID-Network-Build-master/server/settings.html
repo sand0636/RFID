@@ -1,0 +1,99 @@
+<!--
+* Ben Duggan
+* 11/6/18
+* Page for editing the system settings
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>Settings - RFID Network</title>
+
+        <link href="/dependences/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/dependences/main.css" rel="stylesheet">
+
+        <script src="/dependences/jsLibraries/jquery-3.2.1.min.js"></script>
+        <script src="/dependences/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/dependences/main.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+            <a class="navbar-brand" href="/">RFID Network</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarNavDropdown" class="navbar-collapse collapse">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item"><a class="nav-link" href="/birds.html">Birds</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/readers.html">Reader</a></li>
+                  <li class="nav-item active"><a class="nav-link" href="/settings.html">Settings</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/logs.html">Logs</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/help.html">Help</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div id="errorsContainer"></div>
+        <div class="container container-main">
+          <button class="btn btn-primary" onclick="window.location='/secure/settings.html';">Go to admin page</button>
+          <h1>Settings</h1>
+          <div class="container">
+            <ul>
+              <li><a href="#system">System information</a></li>
+              <li><a href="#saveData">Save data</a></li>
+            </ul>
+            <hr>
+          </div>
+          <div class="container settings-container" id="system">
+            <h4>System information</h4>
+            <div class="row">
+              <div class="col-md-4">
+                <strong>System time: </strong><span id="settings-systemTime"></span>
+              </div>
+              <div class="col-md-4">
+                <strong>System timezone: </strong><span id="settings-systemTimeZone"></span>
+              </div>
+              <div class="col-md-4">
+                <strong>System up time: </strong><span id="settings-systemUpTime"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <strong>Architecture: </strong><span id="settings-systemArchitecture"></span>
+              </div>
+              <div class="col-md-4">
+                <strong>Operating system: </strong><span id="settings-systemOS"></span>
+              </div>
+              <div class="col-md-4">
+                <strong>CPU usage: </strong><span id="settings-systemCPUUsage"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <strong>Free memory: </strong><span id="settings-systemFreeMem"></span>
+              </div>
+              <div class="col-md-4">
+                <strong>Total memory: </strong><span id="settings-systemTotalMem"></span>
+              </div>
+              <div class="col-md-4">
+                <strong>Percent memory used: </strong><span id="settings-systemPercentMem"></span>
+              </div>
+            </div>
+            <hr>
+          </div>
+          <div class="container settings-container" id="saveData">
+            <h4>Save data</h4>
+            <p>This is where you can easily download data off of the server.  Bird, box and reads data are stored as seporate CSVs and placed in one ZIP.  This ZIP is only created when it is told to by pressing the "Update ZIP" button.  The data can be downloaded through the browser by pressing the "Download ZIP" button.  If a USB is inserted into the Pi then the ZIP can quickly be saved onto the drive by pressing the "Place ZIP on flash drive" button.</p>
+            <button type="button" class="btn btn-primary" id="saveData-updateZIP" onclick='socket.emit("saveData-server", {"type":"updateZIP"})'>Update ZIP</button>
+            <a href="/outputCSV/RFIDNetworkData.zip"><button type="button" class="btn btn-primary" id="saveData-downloadZIP">Download ZIP</button></a>
+            <button type="button" class="btn btn-dark" id="saveData-saveZIPUSB" onclick="alert('Not currently working.')">Place ZIP on flash drive</button>
+            <hr>
+          </div>
+        </div>
+
+        <script src="/dependences/settings.js"></script>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "system_name": "Test1",
+  "system_type": "FieldSite",
+  "mysql": {
+    "host": "localhost",
+    "user": "root",
+    "password": "",
+    "database": "rfidnetwork"
+  },
+  "radio": {
+    "enable": true,
+    "ce": "25",
+    "csn": "0",
+    "channel": 97,
+    "data_rate": "RF24_2MBPS",
+    "PA_level": "RF24_PA_HIGH"
+  },
+  "wireless": {
+    "apOn": true,
+    "ap": {
+      "ssid": "RFIDNetwork",
+      "passphrase": "ChangeThis"
+    },
+    "wifi": {
+      "ssid": "test",
+      "passphrase": "12"
+    }
+  },
+  "newLogOnStart": true,
+  "users": {
+    "admin": {
+      "username": "admin",
+      "password": "pass"
+    },
+    "user": {
+      "username": "user",
+      "password": "pass"
+    }
+  },
+  "adminAccessPages": ["/secure/settings.html","/secure/logs.html","/settings.json"]
+}

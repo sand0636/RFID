@@ -1,0 +1,252 @@
+<!--
+* Ben Duggan
+* 11/6/18
+* Page for editing the system settings
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>Settings - RFID Network</title>
+
+        <link href="/dependences/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/dependences/main.css" rel="stylesheet">
+
+        <script src="/dependences/jsLibraries/jquery-3.2.1.min.js"></script>
+        <script src="/dependences/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/dependences/main.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+            <a class="navbar-brand" href="/">RFID Network</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarNavDropdown" class="navbar-collapse collapse">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item"><a class="nav-link" href="/birds.html">Birds</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/readers.html">Reader</a></li>
+                  <li class="nav-item active"><a class="nav-link" href="/settings.html">Settings</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/logs.html">Logs</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/help.html">Help</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div id="errorsContainer"></div>
+        <div class="container container-main">
+          <h1>Settings</h1>
+          <div class="container">
+            <ul>
+              <li><a href="#system">System information</a></li>
+              <li><a href="#wireless">Wireless</a></li>
+              <li><a href="#radio">Radio</a></li>
+              <li><a href="#saveData">Save data</a></li>
+              <li><a href="#database">Database</a></li>
+                <ul>
+                  <li><a href="#database-addTestData">Add test data</a></li>
+                  <li><a href="#database-deleteTableData">Delete table data</a></li>
+                </ul>
+            </ul>
+            <hr>
+          </div>
+          <div class="container settings-container" id="system">
+            <h4>System information</h4>
+
+            <div class="row">
+              <div class="col-md-4">
+                <label>Server type: </label>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-primary" id="system-typeFieldSite">
+                    <input type="radio" name="enable" id="system-typ1eFieldSite1" autocomplete="off" checked>Field site
+                  </label>
+                  <label class="btn btn-secondary" id="system-typeOther">
+                    <input type="radio" name="enable" id="system-typeOther1" autocomplete="off">Other
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label>System name: </label>
+                <input type="text" class="form-control" id="system-systemName">
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-primary" id="system-systemData">Submit</button>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4">
+                <strong>System time: </strong><span id="settings-systemTime"></span>
+              </div>
+              <div class="col-md-4">
+                <strong>System timezone: </strong><span id="settings-systemTimeZone"></span>
+              </div>
+              <div class="col-md-4">
+                <strong>System up time: </strong><span id="settings-systemUpTime"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <strong>Architecture: </strong><span id="settings-systemArchitecture"></span>
+              </div>
+              <div class="col-md-4">
+                <strong>Operating system: </strong><span id="settings-systemOS"></span>
+              </div>
+              <div class="col-md-4">
+                <strong>CPU usage: </strong><span id="settings-systemCPUUsage"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <strong>Free memory: </strong><span id="settings-systemFreeMem"></span>
+              </div>
+              <div class="col-md-4">
+                <strong>Total memory: </strong><span id="settings-systemTotalMem"></span>
+              </div>
+              <div class="col-md-4">
+                <strong>Percent memory used: </strong><span id="settings-systemPercentMem"></span>
+              </div>
+            </div>
+            <div id="system-shutdownRestart" class="">
+              <br>
+              <h5>Reboot or shutdown system</h5>
+              <button type="button" class="btn btn-danger" id="system-reboot">Reboot</button>
+              <button type="button" class="btn btn-danger" id="system-shutdown">Shutdown</button>
+            </div>
+            <hr>
+          </div>
+          <div class="container wireless-container" id="wireless">
+            <h4>Wireless</h4>
+            <div>
+              <h5>Wireless mode</h5>
+              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-primary" id="wireless-apOn">
+                  <input type="radio" name="apOn" id="wireless-apOn1" autocomplete="off" checked>Use access poing (create network)
+                </label>
+                <label class="btn btn-secondary" id="wireless-apOff">
+                  <input type="radio" name="apOn" id="wireless-apOff1" autocomplete="off">Use wifi (connect to network)
+                </label>
+              </div>
+              <label>Use the device as an access point(ap) (creates a network where you can connect to the RPi using a wifi equipped device) or with wifi (connect to a network using the RPi).  The currently used option is in blue.  It is best ot use the RPi in AP mode when it is in the field so you can connect to it.  <strong>This requires the system to reboot which may take up to a minute!</strong></label>
+            </div>
+            <div class="wireless-ap">
+              <h5>Access point</h5>
+              <div class="row">
+                <div class="col-md-4"><label>SSID (name): </label><input type="text" name="ssid" class="form-control" id="wireless-ssidAP"></div>
+                <div class="col-md-4"><label>Passphrase: </label><input type="text" name="ssid" class="form-control" id="wireless-passphraseAP"></div>
+                <div class="col-md-4"><button type="button" class="btn btn-primary" id="wireless-changeAP">Change access point SSID or assphrase</button></div>
+              </div>
+            </div>
+            <div class="wireless-ap">
+              <h5>WiFi</h5>
+              <label>This does not show every WiFi saved on the RPi, only the one saved in settings.json.  So don't be alarmed if you don't see a WiFi listed here that you haven't entered.</label>
+              <div class="row">
+                <div class="col-md-4"><label>SSID (name): </label><input type="text" name="ssid" class="form-control" id="wireless-ssidWiFi"></div>
+                <div class="col-md-4"><label>Passphrase: </label><input type="text" name="ssid" class="form-control" id="wireless-passphraseWiFi"></div>
+                <div class="col-md-4"><button type="button" class="btn btn-primary" id="wireless-changeWiFi">Change WiFi SSID or passphrase</button></div>
+              </div>
+            </div>
+            <hr>
+          </div>
+          <div class="container settings-container" id="saveData">
+            <h4>Save data</h4>
+            <p>This is where you can easily download data off of the server.  Bird, box and reads data are stored as seporate CSVs and placed in one ZIP.  This ZIP is only created when it is told to by pressing the "Update ZIP" button.  The data can be downloaded through the browser by pressing the "Download ZIP" button.  If a USB is inserted into the Pi then the ZIP can quickly be saved onto the drive by pressing the "Place ZIP on flash drive" button.</p>
+            <button type="button" class="btn btn-primary" id="saveData-updateZIP" onclick='socket.emit("saveData-server", {"type":"updateZIP"})'>Update ZIP</button>
+            <a href="/outputCSV/RFIDNetworkData.zip"><button type="button" class="btn btn-primary" id="saveData-downloadZIP">Download ZIP</button></a>
+            <button type="button" class="btn btn-dark" id="saveData-saveZIPUSB" onclick="alert('Not currently working.')">Place ZIP on flash drive</button>
+            <hr>
+          </div>
+          <div class="container" id="radio">
+            <h4>Radio</h4>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-primary" id="radio-on">
+                <input type="radio" name="enable" id="radio-on1" autocomplete="off" checked>On
+              </label>
+              <label class="btn btn-secondary" id="radio-off">
+                <input type="radio" name="enable" id="radio-off1" autocomplete="off">Off
+              </label>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <label>CE: </label>
+                <input type="text" class="form-control" id="radio-ce">
+              </div>
+              <div class="col-md-4">
+                <label>CSN: </label>
+                <input type="text" class="form-control" id="radio-csn">
+              </div>
+              <div class="col-md-4">
+                <label>Channel: </label>
+                <input type="text" class="form-control" id="radio-channel">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <label>Data rate: </label>
+                <input type="text" class="form-control" id="radio-dataRate">
+              </div>
+              <div class="col-md-4">
+                <label>PA level: </label>
+                <input type="text" class="form-control" id="radio-paLevel">
+              </div>
+              <div class="col-md-4">
+                <label>The system must be rebooted to change the radio settings.</label>
+                <button class="btn btn-primary" id="radio-submit">Submit</button>
+              </div>
+            </div>
+            <hr>
+          </div>
+          <div class="container settings-container" id="database">
+            <h4>Database</h4>
+            <div class="container" id="database-addTestData">
+              <h5>Add test data</h5>
+              <p>This adds test data to all of the tables in the database without deleting anything.  The data that is entered can be seen below</p>
+              <table class="table table-striped">
+                <h6>Birds: </h6>
+                <thead>
+                  <tr>
+                    <th>rfidTag</th>
+                    <th>bandID</th>
+                    <th>Sex</th>
+                    <th>age</th>
+                    <th>taggedDateTime</th>
+                    <th>taggedLocation</th>
+                    <th>comment</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>0123456789</td><td>ABCDEFGHIJ</td><td>F</td><td>17</td><td>N/a</td><td>stl</td><td>sis</td>
+                  </tr>
+                  <tr>
+                    <td>6666666666</td><td>BENWASHERE</td><td>M</td><td>20</td><td>bd</td><td>stl</td><td>ben</td>
+                  </tr>
+                  <tr>
+                    <td>9876543210</td><td>HELLOTOALL</td><td>M</td><td>13</td><td>n/a</td><td>stl</td><td>bro</td>
+                  </tr>
+                  <tr>
+                    <td>0246813579</td><td>A0B1C2D3E4</td><td>F</td><td>1.5</td><td>n/a</td><td>Bloomington</td><td>rand</td>
+                  </tr>
+                </tbody>
+              </table>
+              <button type="button" class="btn btn-primary" id="database-addTestDataGo">Add test data</button>
+            </div>
+            <div class="container" id="database-deleteTableData">
+              <h5>Delete all data</h5>
+              <p>This deletes all the data from the selected database.  This only affects the local server, but if this is the sync server it will affect all other servers.  <strong>This cannot be undone!!!</strong> </p>
+
+              <button type="button" class="btn btn-danger" id="database-deleteBirdTable">Delete bird data</button>
+              <button type="button" class="btn btn-danger" id="database-deleteBoxTable">Delete box data</button>
+              <button type="button" class="btn btn-danger" id="database-deleteReadsTable">Delete reads data</button>
+              <button type="button" class="btn btn-danger" id="database-deleteAllTable">Delete all data</button>
+            </div>
+            <hr>
+          </div>
+        </div>
+
+        <script src="/dependences/settings.js"></script>
+    </body>
+</html>

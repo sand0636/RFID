@@ -1,0 +1,56 @@
+{"message":"log file emptied.","level":"warn","timestamp":"2019-01-16T04:23:10.615Z"}
+{"message":"Deleted data from birds database.","level":"warn","timestamp":"2019-01-16T04:23:33.399Z"}
+{"message":"Deleted data from readers database.","level":"warn","timestamp":"2019-01-16T04:23:33.400Z"}
+{"message":"Deleted data from readerdata database.","level":"warn","timestamp":"2019-01-16T04:23:33.402Z"}
+{"message":"Deleted data from birds database.","level":"warn","timestamp":"2019-01-16T18:05:10.971Z"}
+{"message":"Deleted data from readerdata database.","level":"warn","timestamp":"2019-01-16T18:05:10.973Z"}
+{"message":"Deleted data from readers database.","level":"warn","timestamp":"2019-01-16T18:05:10.975Z"}
+{"message":"Server is running on port: 4000","level":"info","timestamp":"2019-01-25T03:17:31.267Z"}
+{"errno":-4058,"code":"ENOENT","syscall":"unlink","path":"C:\\Users\\dugga\\Documents\\Rosvall Lab\\RFID-Network\\server\\log.log","level":"error","timestamp":"2019-01-25T03:17:31.297Z"}
+{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true,"level":"error","timestamp":"2019-01-25T03:17:32.311Z"}
+{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true,"level":"error","timestamp":"2019-01-25T03:17:32.317Z"}
+{"message":"Radio started","level":"info","timestamp":"2019-01-25T03:17:41.235Z"}
+{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true,"level":"error","timestamp":"2019-01-25T03:17:43.009Z"}
+{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true,"level":"error","timestamp":"2019-01-25T03:17:43.020Z"}
+{"message":"Server is running on port: 4000","level":"info","timestamp":"2019-01-25T17:30:46.727Z"}
+{"errno":-4058,"code":"ENOENT","syscall":"unlink","path":"C:\\Users\\dugga\\Documents\\Rosvall Lab\\RFID-Network\\server\\log.log","level":"error","timestamp":"2019-01-25T17:30:46.739Z"}
+{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true,"level":"error","timestamp":"2019-01-25T17:30:47.746Z"}
+{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true,"level":"error","timestamp":"2019-01-25T17:30:47.748Z"}
+{"message":"Radio started","level":"info","timestamp":"2019-01-25T17:30:56.721Z"}
+{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true,"level":"error","timestamp":"2019-01-25T17:30:58.110Z"}
+{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true,"level":"error","timestamp":"2019-01-25T17:30:58.121Z"}
+{"message":"Server is running on port: 4000","level":"info","timestamp":"2019-01-25T18:17:36.645Z"}
+{"errno":-4058,"code":"ENOENT","syscall":"unlink","path":"C:\\Users\\dugga\\Documents\\Rosvall Lab\\RFID-Network\\server\\log.log","level":"error","timestamp":"2019-01-25T18:17:36.663Z"}
+{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true,"level":"error","timestamp":"2019-01-25T18:17:37.682Z"}
+{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true,"level":"error","timestamp":"2019-01-25T18:17:37.687Z"}
+{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true,"level":"error","timestamp":"2019-01-25T18:17:42.315Z"}
+{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true,"level":"error","timestamp":"2019-01-25T18:17:42.322Z"}
+{"message":"Radio started","level":"info","timestamp":"2019-01-25T18:17:46.622Z"}
+{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true,"level":"error","timestamp":"2019-01-25T18:17:54.613Z"}
+{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true,"level":"error","timestamp":"2019-01-25T18:17:54.623Z"}
+{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true,"level":"error","timestamp":"2019-01-25T18:18:06.435Z"}
+{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true,"level":"error","timestamp":"2019-01-25T18:18:06.442Z"}
+{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true,"level":"error","timestamp":"2019-01-25T18:18:22.480Z"}
+{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true,"level":"error","timestamp":"2019-01-25T18:18:22.495Z"}
+{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true,"level":"error","timestamp":"2019-01-25T18:20:04.400Z"}
+{"message":"Server is running on port: 4000","level":"info","timestamp":"2019-01-25T18:20:10.505Z"}
+{"errno":-4058,"code":"ENOENT","syscall":"unlink","path":"C:\\Users\\dugga\\Documents\\Rosvall Lab\\RFID-Network\\server\\log.log","level":"error","timestamp":"2019-01-25T18:20:10.554Z"}
+{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true,"level":"error","timestamp":"2019-01-25T18:20:11.569Z"}
+{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true,"level":"error","timestamp":"2019-01-25T18:20:11.578Z"}
+{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true,"level":"error","timestamp":"2019-01-25T18:20:12.900Z"}
+{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"127.0.0.1","port":3306,"fatal":true,"level":"error","timestamp":"2019-01-25T18:20:12.904Z"}
+{"message":"Server is running on port: 4000","level":"info","timestamp":"2019-01-25T18:20:43.713Z"}
+{"errno":-4058,"code":"ENOENT","syscall":"unlink","path":"C:\\Users\\dugga\\Documents\\Rosvall Lab\\RFID-Network\\server\\log.log","level":"error","timestamp":"2019-01-25T18:20:43.742Z"}
+{"message":"Radio started","level":"info","timestamp":"2019-01-25T18:20:53.685Z"}
+{"message":"Server is running on port: 4000","level":"info","timestamp":"2019-01-25T18:21:37.636Z"}
+{"errno":-4058,"code":"ENOENT","syscall":"unlink","path":"C:\\Users\\dugga\\Documents\\Rosvall Lab\\RFID-Network\\server\\log.log","level":"error","timestamp":"2019-01-25T18:21:37.665Z"}
+{"message":"Radio started","level":"info","timestamp":"2019-01-25T18:21:47.615Z"}
+{"message":"Server is running on port: 4000","level":"info","timestamp":"2019-01-25T18:22:23.672Z"}
+{"errno":-4058,"code":"ENOENT","syscall":"unlink","path":"C:\\Users\\dugga\\Documents\\Rosvall Lab\\RFID-Network\\server\\log.log","level":"error","timestamp":"2019-01-25T18:22:23.699Z"}
+{"message":"Radio started","level":"info","timestamp":"2019-01-25T18:22:33.648Z"}
+{"message":"Server is running on port: 4000","level":"info","timestamp":"2019-01-25T18:22:48.240Z"}
+{"errno":-4058,"code":"ENOENT","syscall":"unlink","path":"C:\\Users\\dugga\\Documents\\Rosvall Lab\\RFID-Network\\server\\log.log","level":"error","timestamp":"2019-01-25T18:22:48.265Z"}
+{"message":"Radio started","level":"info","timestamp":"2019-01-25T18:22:58.207Z"}
+{"message":"Server is running on port: 4000","level":"info","timestamp":"2019-01-25T18:23:37.596Z"}
+{"errno":-4058,"code":"ENOENT","syscall":"unlink","path":"C:\\Users\\dugga\\Documents\\Rosvall Lab\\RFID-Network\\server\\log.log","level":"error","timestamp":"2019-01-25T18:23:37.613Z"}
+{"message":"Radio started","level":"info","timestamp":"2019-01-25T18:23:47.582Z"}

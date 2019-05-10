@@ -1,0 +1,13 @@
+Start ambient = 24.69 C
+Start time = 4/12/2018 21:50:08
+Start temp = 25.12 C
+
+End ambient =  25.31 C
+End time = 4/13/2018 00:13:03
+End temp =  25.37 C
+
+Notes: 
+- Was done in Wells first floor.  
+- Ambient temp was taken on the table, then moved to floor.  Could account for weird drop in temp.
+- Door opened around 22:14:00 to cool down room (thank god)
+- End ambient was taken on the floor

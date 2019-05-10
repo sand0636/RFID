@@ -1,0 +1,74 @@
+\documentclass[12pt]{article}
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\setlength{\footskip}{100pt}
+
+\begin{document}
+\title{\vspace{-3cm}Localized Radio Sleep Protocol}
+\author{Ben Duggan}
+\date{\today}
+\maketitle
+
+\section{Purpose}
+The nRF24 radio modules are a great relatively low power module.  However, when attaching the radios to a device ran on batteries, where up time is crucial, performance must sometimes be sacrificed by turning off the radios to ensure that the system lasts long enough to be useful.  For this reason this protocol has been designed to allow radios to power down all at once and then all turn on after a predetermined amount of time.  The two parts to this protocol are the server node (Raspberry Pi, master node or node 0) and the readers (child nodes nodes 1-127).
+
+\section{Method}
+The server’s radio will always be kept on.  This is to help ensure that reconnections can happen quickly and more serious problems don’t occur.  By default all radios are on and only power down when the reader does so or when the server tell the reader to.  When a reader has no reads in its queue it will tell the server that it is able to sleep.  If every node in the sub-tree, with this node as the root, have sent a sleep command then the every node in the sub-tree will be told to go to sleep.  These nodes will power down for the predefined amount of time but if there are children in this tree that already sleeping a time will be used that ensures they can reconnect when the they power on.
+
+\section{Pseudocode}
+\subsection{server}
+\begin{algorithm}
+	\caption{Server Periodic Radio Sleep}
+	\begin{algorithmic} 	
+		\STATE $sleepTime \leftarrow$ length sleep in milliseconds
+		\IF{A message of type $'S'$ is sent and the first char is "Y"}
+		\STATE Record that this node can sleep
+		\IF{Every child of this node can sleep}
+		\STATE Check so see if any child is currently sleeping in BFS order. If they are use $sleepTime$ - duration of time that node has been sleeping as the sleep time.
+		\STATE Put each child to sleep in DFS order, recording that it's sleeping and the time it went to sleep.
+		\ENDIF
+		\ENDIF
+		
+		\IF{A message of type $'S'$ is sent and the first char is "N"}
+		\STATE Record that this node cannot sleep.
+		\ENDIF
+	
+	\end{algorithmic}
+\end{algorithm}
+
+\subsection{reader}
+\begin{algorithm}
+	\caption{Reader Localized Radio Algorithm}
+	\begin{algorithmic} 	
+		\STATE $sleepTime \leftarrow$ length sleep in milliseconds received from the server 
+		\STATE $sleepTimeRecieved \leftarrow$ time in milliseconds when the sleep command was received
+		\IF{milliseconds()-$sleepTimeRecieved > sleepTime$}
+		\STATE $radio$.powerUp()
+		\STATE $radio$.requestAddress()
+		\ENDIF
+		
+		\IF{$message$ containing sleep code $'S'$ is received and first char in $message$ is a "S"}
+		\STATE $sleepTime = message.timeToSleep$
+		\STATE $sleepTimeRecieved = $ milliseconds()
+		\STATE $network$.releaseAddress()
+		\STATE $radio$.powerDown()
+		\ENDIF
+		
+		\IF{$readQueue$.length() == 0 and a sleep command hasn't been sent}
+		\IF{sleep command hasn't been sent}
+		\STATE Send $server$ sleep command $'S'$ with the first char of message "Y"
+		\ENDIF
+		\ELSE
+		\IF{sleep command has been sent}
+		\STATE Send $server$ sleep command $'S'$ with the first char of message "N"
+		\ENDIF
+		\ENDIF
+		
+		
+	\end{algorithmic}
+\end{algorithm}
+
+
+\end{document}

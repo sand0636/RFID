@@ -1,0 +1,22 @@
+/* Ben Duggan 1/15/18 */
+
+.container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.left-right {
+  display: inline-block;
+}
+.left {
+  width: 50%;
+  float: left;
+}
+.right {
+  width: 50%;
+  float: right;
+}
+
+#formContainer {
+    display: none;
+}

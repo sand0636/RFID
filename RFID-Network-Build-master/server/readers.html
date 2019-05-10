@@ -1,0 +1,148 @@
+<!--
+* Ben Duggan
+* 10/30/18
+* Page for displaying, adding, editing and deleting box data
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>Boxes - RFID Network</title>
+
+        <link href="/dependences/jsLibraries/select2/select2.min.css" rel="stylesheet" />
+        <link href="/dependences/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/dependences/main.css" rel="stylesheet">
+
+        <script src="/dependences/jsLibraries/jquery-3.2.1.min.js"></script>
+        <script src="/dependences/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/dependences/jsLibraries/select2/select2.min.js"></script>
+        <script src="/dependences/main.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+            <a class="navbar-brand" href="/">RFID Network</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarNavDropdown" class="navbar-collapse collapse">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item"><a class="nav-link" href="/birds.html">Birds</a></li>
+                  <li class="nav-item active"><a class="nav-link" href="/readers.html">Reader</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/settings.html">Settings</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/logs.html">Logs</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/help.html">Help</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div id="errorsContainer"></div>
+        <div class="container container-main">
+            <h3>Boxes config</h3>
+            <h4 id="sectionTitle"></h4>
+            <div class="container message"></div>
+            <div class="container" id="formContainer">
+                <h4 id="form-title"></h4>
+                <form id="form-readers">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                              <label for="form-reader">Reader: </label>
+                              <input type="text" class="form-control" id="form-reader">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="box">Box: </label>
+                                <input type="text" class="form-control" id="form-box">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="form-fieldSite">Field site: </label> <br>
+                                <select class="form-control js-example-basic-single" id="form-fieldSite" name="states[]" style="width:100%;"></select>
+                                <small class="form-text">Not currently implimented</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                          <div class="form-group">
+                              <label for="form-lat">Lat: </label>
+                              <input type="text" class="form-control" id="form-lat">
+                          </div>
+                      </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="form-lon">Log: </label>
+                                <input type="text" class="form-control" id="form-lon">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="form-taggedDate">Start date-time: </label>
+                                <input type="date" class="form-control" id="form-taggedDate">
+                                <input type="time" class="form-control" id="form-taggedTime">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                          <div class="form-group">
+                              <label for="form-comment">Comment: </label>
+                              <textarea class="form-control" id="form-comment" rows="3"></textarea>
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="form-group">
+                              <label for="form-currentDraw">Current draw (mA): </label>
+                              <input type="text" class="form-control" id="form-currentDraw">
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="form-group">
+                              <label for="form-currentSupply">Current supply (mAH): </label>
+                              <input type="text" class="form-control" id="form-currentSupply">
+                          </div>
+                      </div>
+                    </div>
+                </form>
+                <div id="form-buttons"></div>
+                <hr />
+                <br />
+            </div>
+            <div id="boxAddEdit"></div>
+            <br /><br />
+            <div id="boxTableView">
+                <div class="table-responsive" id="">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Box</th>
+                                <th>Reader</th>
+                                <th>Last birds</th>
+                                <th class="tableMore">Field Site</th>
+                                <th class="tableMore">Lat</th>
+                                <th class="tableMore">Lon</th>
+                                <th>Start date/time</th>
+                                <th class="tableMore">Current draw (mA)</th>
+                                <th class="tableMore">Current supply (mAH)</th>
+                                <th>Est. remaining up time (min)</th>
+                                <th>Comment</th>
+                            </tr>
+                        </thead>
+                        <tbody id="boxTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="readsViewer">
+            </div>
+        </div>
+
+        <script src="/dependences/readsViewer.js"></script>
+        <script src="/dependences/readers.js"></script>
+    </body>
+</html>

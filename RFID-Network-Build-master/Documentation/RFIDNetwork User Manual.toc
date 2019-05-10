@@ -1,0 +1,34 @@
+\contentsline {section}{\numberline {1}Preface}{3}{section.1}
+\contentsline {section}{\numberline {2}Instillation}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}The radio}{4}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Setting up the radio}{5}{subsubsection.2.1.1}
+\contentsline {subsection}{\numberline {2.2}Arduino (RFID reader)}{6}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Hardware}{6}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Software}{9}{subsubsection.2.2.2}
+\contentsline {subsection}{\numberline {2.3}Server}{9}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Hardware}{10}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Software}{11}{subsubsection.2.3.2}
+\contentsline {section}{\numberline {3}Server (Raspberry Pi)}{12}{section.3}
+\contentsline {subsection}{\numberline {3.1}How to use}{12}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Settings}{12}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Battery management system}{12}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Front-end (website)}{14}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Style}{14}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Scripting}{17}{subsubsection.3.4.2}
+\contentsline {subsection}{\numberline {3.5}Back-end (Node.js)}{21}{subsection.3.5}
+\contentsline {section}{\numberline {4}RFIDNetwork class (Arduino code)}{21}{section.4}
+\contentsline {subsection}{\numberline {4.1}Documentation}{21}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}How to add to another reader}{21}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Understanding the mesh networking}{21}{subsection.4.3}
+\contentsline {section}{\numberline {5}Protocols}{21}{section.5}
+\contentsline {subsection}{\numberline {5.1}RFIDNetworkProtocol}{21}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Localized radio sleep}{21}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Purpose}{21}{subsubsection.5.2.1}
+\contentsline {section}{\numberline {6}Tests}{21}{section.6}
+\contentsline {subsection}{\numberline {6.1}Range}{21}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Power}{21}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Reliability}{21}{subsection.6.3}
+\contentsline {section}{\numberline {7}Appendix}{21}{section.7}
+\contentsline {subsection}{\numberline {7.1}Purchase list}{21}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Code documentation/walk through}{22}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Dependencies}{22}{subsection.7.3}
